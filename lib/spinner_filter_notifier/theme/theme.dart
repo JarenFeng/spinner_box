@@ -126,6 +126,9 @@ class SBoxBotBtnData {
   /// 按钮装饰
   final BoxDecoration rightDecoration;
 
+  /// 是否有上面的 border
+  final bool hasTopBorder;
+
   const SBoxBotBtnData({
     this.isRest = true,
     this.leftTxt = '重置',
@@ -145,6 +148,7 @@ class SBoxBotBtnData {
         colors: [Color(0xffF56E60), Color(0xffE72410)],
       ),
     ),
+    this.hasTopBorder = true,
   });
 
   SBoxBotBtnData copyWith({
@@ -225,6 +229,9 @@ class SColumnThemeData {
   /// 最大显示行数
   final int? maxLine;
 
+  /// 是否有上面的 border
+  final bool hasTopBorder;
+
   const SColumnThemeData({
     this.maxLine = 1,
     this.height = 30,
@@ -237,6 +244,7 @@ class SColumnThemeData {
         color: Color(0xffE72410), fontSize: 14, fontWeight: FontWeight.w600),
     this.unselectedStyle = const TextStyle(
         color: Color(0xff20263A), fontSize: 14, fontWeight: FontWeight.normal),
+    this.hasTopBorder = true,
   });
 
   @override
@@ -315,6 +323,9 @@ class SWrapThemeData {
   /// 按钮装饰
   final BoxDecoration unselectedDecoration;
 
+  /// 是否有上面的 border
+  final bool hasTopBorder;
+
   const SWrapThemeData({
     this.runSpacing = 10,
     this.spacing = 10,
@@ -329,6 +340,7 @@ class SWrapThemeData {
       borderRadius: BorderRadius.all(Radius.circular(4)),
       gradient: LinearGradient(colors: [Color(0xfff7f7f7), Color(0xfff7f7f7)]),
     ),
+    this.hasTopBorder = true,
   });
 
   @override

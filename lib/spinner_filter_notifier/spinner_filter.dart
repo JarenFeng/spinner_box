@@ -141,26 +141,27 @@ class _ContentView extends StatelessWidget {
       notifier: notifier,
       child: Material(
         color: theme.backgroundColor,
-        child: const Stack(
+        child: Stack(
           children: [
-            SingleChildScrollView(
+            const SingleChildScrollView(
               child: _SpinnerContent(),
             ),
-            Positioned(
+            const Positioned(
               right: 0,
               left: 0,
               bottom: 0,
               child: _BotButtons(),
             ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Divider(
-                height: 1,
-                color: Color(0xffEEEEEE),
-              ),
-            )
+            if (theme.buttons.hasTopBorder)
+              const Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: Divider(
+                  height: 1,
+                  color: Color(0xffEEEEEE),
+                ),
+              )
           ],
         ),
       ),
@@ -219,8 +220,8 @@ class _BotButtons extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: theme.backgroundColor,
-        border: const Border(
-          top: BorderSide(width: 1, color: Color(0xfff7f7f7)),
+        border:  Border(
+          top: theme.hasTopBorder ? const BorderSide(width: 1, color: Color(0xfff7f7f7)) : BorderSide.none,
         ),
       ),
       child: Row(
